@@ -1,30 +1,24 @@
 const binSearch = function(array, x) {
   
-  // Takes an array and a number. 
-  // Returns an array with an index and a number of steps performed to find a given number in the array. 
-  // If number hasn't been found returns '-1' as an index.
+  // Takes an array and a number. Returns an array with an index and number of steps performed to find the number in the array. If number hasn't been found returns -1 as an index.
   
   let min_val = 0
   let max_val = array.length - 1
   let guess
   let steps = 0
   
-  while (true) {
-    
+  while (min_val <= max_val) {
+        
+    guess = Math.floor((min_val + max_val) / 2)
     steps += 1
     
-    guess = Math.floor((min_val + max_val) / 2);
-    
-    if (min_val > max_val) {
-      return [-1, steps]
-    } 
-    
     if (array[guess] === x) {
-      return [guess, steps]
-    } else if (array[guess] < x) {
-      min_val = guess + 1
+        return [guess, steps]
+    } else  if (x > array[guess]) {
+        min_val = guess + 1
     } else {
-      max_val = guess - 1
+        max_val = guess - 1;
     }
-  }
+    }
+	return [-1, steps]
 }
