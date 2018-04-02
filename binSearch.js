@@ -1,6 +1,8 @@
 const binSearch = function(array, x) {
   
-  // Takes an array and a number. Returns an array with an index and number of steps performed to find the number in the array. If number hasn't been found returns -1 as an index.
+  // Takes an array and a number. 
+  // Returns an array with an index and number of steps performed to find the number in the array. 
+  // If number hasn't been found returns -1 as an index.
   
   let min_val = 0
   let max_val = array.length - 1
